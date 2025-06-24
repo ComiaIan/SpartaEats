@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpartaEats - BatStateU Food Delivery Service</title>
+    <!-- ...existing code... -->
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
         }
 
         body {
@@ -382,6 +387,25 @@
             font-weight: 600;
         }
 
+        .cart-badge {
+            background: #ff4757;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: bold;
+            min-width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1;
+            border: 2px solid #fff;
+        }
+
         /* Cart Button */
         .cart-btn {
             position: fixed;
@@ -399,6 +423,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            position: fixed;
         }
 
         .cart-btn:hover {
@@ -617,44 +642,6 @@
             background: white;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .delivery-address {
-                min-width: auto;
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
-            }
-
-            .role-selection {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .store-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .dashboard-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .order-footer {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: stretch;
-            }
-        }
-
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -687,7 +674,157 @@
         .notification.error {
             background: #ff4757;
         }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 800px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .modal-content {
+                max-width: 95vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+            .container {
+                max-width: 98vw;
+                padding: 0 8px;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+            .location-selector {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+            .hero-section {
+                padding: 2rem 0;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .delivery-address {
+                min-width: auto;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem;
+                width: 100%;
+            }
+            .role-selection {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .role-card {
+                padding: 1.2rem;
+            }
+            .main-content {
+                min-height: 60vh;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+                padding-bottom: 0.5rem;
+            }
+            .store-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .dashboard-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .order-footer {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: stretch;
+            }
+            .modal-content {
+                padding: 1rem;
+                max-width: 98vw;
+            }
+            .cart-btn {
+                padding: 0.7rem 1.1rem;
+                font-size: 1rem;
+                right: 10px;
+                bottom: 10px;
+            }
+            .cart-badge {
+                min-width: 20px;
+                height: 20px;
+                font-size: 0.8rem;
+                top: -6px;
+                right: -6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            .container {
+                padding: 0 2px;
+            }
+            .header-content {
+                padding: 0.7rem 0;
+            }
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+            .delivery-address {
+                padding: 0.7rem;
+                font-size: 0.95rem;
+            }
+            .role-card {
+                padding: 0.7rem;
+            }
+            .modal-content {
+                padding: 0.7rem;
+                max-width: 99vw;
+            }
+            .cart-btn {
+                padding: 0.5rem 0.7rem;
+                font-size: 0.95rem;
+            }
+            .cart-badge {
+                min-width: 16px;
+                height: 16px;
+                font-size: 0.7rem;
+                top: -4px;
+                right: -4px;
+            }
+        }
     </style>
+<!-- ...existing code... -->
 </head>
 <body>
     <!-- Header -->
@@ -863,8 +1000,10 @@
 
     <!-- Floating Cart Button -->
     <button class="cart-btn" onclick="showCart()">
-        🛒 Cart (3)
+        🛒 Cart
+        <span class="cart-badge" id="cart-badge">3</span>
     </button>
+
 
     <!-- Login Modal -->
     <div class="modal" id="login-modal">
@@ -921,6 +1060,12 @@
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Create account</button>
             </form>
+        </div>
+    </div>
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content" id="product-modal-content">
+            <!-- Product details will be populated by JavaScript -->
         </div>
     </div>
 
@@ -1042,7 +1187,7 @@
             grid.innerHTML = '';
             storeList.forEach(store => {
                 grid.innerHTML += `
-                    <div class="store-card">
+                    <div class="store-card" onclick="showProduct(${store.id})">
                         <div class="store-image">${store.image}
                             ${store.deliveryFee === "Free delivery" ? `<span class="delivery-tag">Free</span>` : ""}
                         </div>
@@ -1104,6 +1249,18 @@
             }
         ];
 
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            let count = 0;
+            cart.forEach(item => count += item.quantity);
+            badge.textContent = count;
+            badge.style.display = count > 0 ? 'inline-flex' : 'none';
+        }
+
+        // Call this after cart changes
+        renderCart();
+        updateCartBadge();
+
         // Render cart items
         function renderCart() {
             const cartItemsDiv = document.getElementById('cart-items');
@@ -1114,7 +1271,7 @@
                 return;
             }
             let total = 0;
-            cartItemsDiv.innerHTML = cart.map(item => {
+            cartItemsDiv.innerHTML = cart.map((item, idx) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
                 return `
@@ -1124,7 +1281,10 @@
                             <div style="font-size:0.95rem; color:#666;">${item.store}</div>
                             <div style="font-size:0.95rem; color:#999;">Qty: ${item.quantity}</div>
                         </div>
-                        <div style="font-weight:600;">$${itemTotal.toFixed(2)}</div>
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <div style="font-weight:600;">$${itemTotal.toFixed(2)}</div>
+                            <button onclick="removeFromCart(${idx})" title="Remove" style="background:none; border:none; color:#e21b70; font-size:1.2rem; cursor:pointer;">✕</button>
+                        </div>
                     </div>
                 `;
             }).join('');
@@ -1135,6 +1295,8 @@
         function showCart() {
             document.getElementById('cart-modal').classList.add('active');
             renderCart();
+            updateCartBadge();
+
         }
          // ...existing code...
 
@@ -1250,5 +1412,69 @@
         renderAvailableOrders();
         renderActiveDeliveries();
 
-        // ...existing code...
+        function showProduct(storeId) {
+            const store = stores.find(s => s.id === storeId);
+            if (!store) return;
+            const modalContent = document.getElementById('product-modal-content');
+            modalContent.innerHTML = `
+                <div class="modal-header">
+                    <h2 class="modal-title">${store.name}</h2>
+                    <button class="close-btn" onclick="closeModal('product-modal')">×</button>
+                </div>
+                <div style="text-align:center; font-size:3rem; margin-bottom:1rem;">${store.image}</div>
+                <div style="font-size:1.1rem; margin-bottom:0.5rem;">${store.cuisine}</div>
+                <div style="color:#666; margin-bottom:1rem;">${store.description}</div>
+                <div style="margin-bottom:1rem;">
+                    <span style="font-weight:600;">Rating:</span> ${store.rating} ★<br>
+                    <span style="font-weight:600;">Delivery:</span> ${store.deliveryTime} • <span style="color:#e21b70;">${store.deliveryFee}</span>
+                </div>
+                <div style="display:flex; gap:1rem; margin-top:2rem;">
+                    <button class="btn btn-primary" style="flex:1;" onclick="addToCart(${store.id})">Add to Cart</button>
+                    <button class="btn btn-secondary" style="flex:1;" onclick="buyNow(${store.id})">Buy Now</button>
+                </div>
+            `;
+            document.getElementById('product-modal').classList.add('active');
+        }
+
+        // Add to Cart logic (simple demo)
+        function addToCart(storeId) {
+            const store = stores.find(s => s.id === storeId);
+            if (!store) return;
+            cart.push({
+                name: store.name + " Special",
+                store: store.name,
+                quantity: 1,
+                price: 9.99 // Example price
+            });
+            closeModal('product-modal');
+            showNotification(`${store.name} added to cart!`);
+            renderCart();
+            updateCartBadge();
+
+        }
+
+        // Remove from cart function
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            renderCart();
+            updateCartBadge();
+            showNotification("Item removed from cart.");
+        }
+
+        // Buy Now logic (simple demo)
+        function buyNow(storeId) {
+            const store = stores.find(s => s.id === storeId);
+            if (!store) return;
+            closeModal('product-modal');
+            showCart();
+            showNotification(`Proceed to checkout for ${store.name}!`);
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notif = document.getElementById('notification');
+            notif.textContent = message;
+            notif.classList.add('show');
+            setTimeout(() => notif.classList.remove('show'), 2000);
+        }
     </script>
